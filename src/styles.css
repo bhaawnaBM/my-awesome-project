@@ -110,3 +110,15 @@ button {
   top: 35px;
   right: 650px;
 }
+
+.githubLink {
+  color: white;
+  display: block;
+  text-align: center;
+  font-size: larger;
+}
+
+.githubLink:hover {
+  cursor: pointer;
+  color: blue;
+}
