@@ -1,0 +1,112 @@
+body {
+  background-image: url("https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/859/original/lights.jpeg?1669002157");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  color: white;
+  max-width: 900px;
+  display: block;
+  margin: 10px auto;
+  padding: auto;
+}
+
+form {
+  text-align: right;
+  padding: 30px 0 0 50px;
+  border-radius: 25px;
+}
+
+h3 {
+  display: block;
+  padding: 0px 0 0 10px;
+  margin: 10px auto;
+  font-family: "Spline Sans Mono", monospace;
+  font-size: 20px;
+}
+
+h1 {
+  padding-left: 10px;
+  margin: 0 autio;
+  font-family: arial, sans-serif;
+  font-weight: 500;
+  font-size: 50px;
+  font-style: italic;
+}
+h2,
+p {
+  font-family: "Inconsolata", monospace;
+  padding-left: 10px;
+  margin: 10px;
+}
+
+h2 {
+  font-size: 30px;
+}
+h2::first-letter {
+  text-transform: capitalize;
+}
+p {
+  font-size: 30px;
+}
+
+.logo {
+  position: fixed;
+  top: 90px;
+  right: 480px;
+}
+
+.weather {
+  position: absolute;
+  top: 220px;
+  right: 480px;
+}
+
+.images {
+  padding: 100px 0 0 10px;
+}
+
+.days {
+  padding: 10px 0 0 10px;
+  font-size: 20px;
+}
+
+.objects {
+  padding: 10px 0 0 10px;
+}
+
+strong {
+  font-size: 20px;
+}
+
+.rain-cloud {
+  color: red;
+}
+
+.unit {
+  position: relative;
+  top: -20px;
+  font-size: 20px;
+  color: white;
+}
+
+button {
+  padding: 5px;
+  background-color: black;
+  border: 3px white solid;
+  border-radius: 20px;
+  color: white;
+  position: fixed;
+  top: 35px;
+  right: 530px;
+}
+
+.SearchButton {
+  padding: 5px;
+  background-color: black;
+  border: 3px white solid;
+  border-radius: 20px;
+  color: white;
+  position: fixed;
+  top: 35px;
+  right: 650px;
+}
