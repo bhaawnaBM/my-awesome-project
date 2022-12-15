@@ -36,7 +36,7 @@
       src="https://kit.fontawesome.com/9ad9b95e2f.js"
       crossorigin="anonymous"
     ></script>
-     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
@@ -44,33 +44,52 @@
       <div class="weather-app">
         <form id="searchBox">
           <div class="row">
-          <div class="col-8">
-          <input type="search" placeholder="Search City" id="searchCity-input" autofocus="on" autocomplete="off" />
-          <button class="search">Search</button>
-        </div>
-        <div class="col-9">
-          <input type="submit" value="Search" class="SearchButton">
-      </div>
-          <div class="col-12">
-            <button class="currentTemp">Current City</button>
-          </div>
+            <div class="col-8">
+              <input
+                type="search"
+                placeholder="Search City"
+                class="searchCity"
+                autofocus="on"
+                autocomplete="off"
+              />
+              <button class="search">Search</button>
+            </div>
+            <div class="col-9">
+              <input type="submit" value="Search" class="SearchButton" />
+            </div>
+            <div class="col-12">
+              <button class="currentTemp">Current City</button>
+            </div>
           </div>
         </form>
-      </div>
         <h3>Current Weather</h3>
         <h1>
-          <span id="temp">16</span>
-          <span class="unit">
-            <a href="#" id="celsius">°C</a>
-            /
-            <a href="#" id="fahrenheit">°F</a>
-          </span>
+          <ul>
+            <li>
+              <span id="temp">16</span>
+              <span class="unit">
+                <a href="#" id="celsius">°C</a>
+                /
+                <a href="#" id="fahrenheit">°F</a>
+              </span>
+            </li>
+          </ul>
         </h1>
         <h2>
-          <span id="city">Tarneit</span>
-          <i class="fa-solid fa-location-dot"></i>
+          <ul>
+            <span id="city">
+              <li>
+                Tarneit
+                <i class="fa-solid fa-location-dot"></i>
+              </li>
+            </span>
+          </ul>
         </h2>
-        <p id="maxmintemp">21°/ 8° Feels like 14°</p>
+        <ul>
+          <li>
+            <p id="maxmintemp">21°/ 8° Feels like 14°</p>
+          </li>
+        </ul>
         <p class="todayWeather"></p>
         <div class="weather">
           <img
@@ -79,19 +98,24 @@
             class="current logo"
           />
           <br />
-          <strong>Cloudy</strong>
-          <div class="row">
-            <div class="col-6">UV Index</div>
-            <div class="col-6">Low</div>
-          </div>
-          <div class="row">
-            <div class="col-6">Humitidy</div>
-            <div class="col-6">75%</div>
-          </div>
-          <div class="row">
-            <div class="col-6">Wind</div>
-            <div class="col-6">26km/hr</div>
-          </div>
+          <ul>
+            <li>
+              <strong>Cloudy</strong>
+              <div class="row">
+                <div class="col-12">UV Index: Low</div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-12">Humitidy: 75%</div>
+              </div>
+            </li>
+            <li>
+              <div class="row">
+                <div class="col-12">Wind: 26km/hr</div>
+              </div>
+            </li>
+          </ul>
           <br />
         </div>
         <div class="row images">
@@ -159,12 +183,15 @@
           <div class="col">6 Nov <br />Partly cloudy</div>
           <div class="col">7 Nov <br />Partly cloudy</div>
         </div>
-        <br />
-        <script src="src/index.js"></script>
       </div>
-      <footer class="githubLink">
-          <a href="https://github.com/bhaawnaBM/my-awesome-project" target="_blank">Github Link to Project</a>
-      </footer>
     </div>
+    <footer class="githubLink">
+      <a href="https://github.com/bhaawnaBM/my-awesome-project" target="_blank"
+        >Open Souce Code</a
+      >
+      by Bhaawna Shashi
+    </footer>
+    <br />
+    <script src="src/index.js"></script>
   </body>
 </html>

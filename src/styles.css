@@ -10,6 +10,14 @@ body {
   padding: auto;
 }
 
+.weather-app {
+  max-width: 1500px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
 form {
   text-align: right;
   padding: 30px 0 0 50px;
@@ -18,15 +26,16 @@ form {
 
 h3 {
   display: block;
-  padding: 0px 0 0 10px;
+  padding: 0;
   margin: 10px auto;
   font-family: "Spline Sans Mono", monospace;
   font-size: 20px;
+  text-align: left;
 }
 
 h1 {
-  padding-left: 10px;
-  margin: 0 autio;
+  padding-top: 10px;
+  margin: 0 auto;
   font-family: arial, sans-serif;
   font-weight: 500;
   font-size: 50px;
@@ -35,8 +44,10 @@ h1 {
 h2,
 p {
   font-family: "Inconsolata", monospace;
-  padding-left: 10px;
+  padding-left: 0px;
   margin: 10px;
+  text-align: left;
+  font-size: 20px;
 }
 
 h2 {
@@ -52,13 +63,13 @@ p {
 .logo {
   position: fixed;
   top: 90px;
-  right: 480px;
+  right: 550px;
 }
 
 .weather {
   position: absolute;
   top: 220px;
-  right: 480px;
+  right: 550px;
 }
 
 .images {
@@ -109,6 +120,19 @@ button {
   position: fixed;
   top: 35px;
   right: 650px;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  line-height: 22px;
+  margin-bottom: 0;
+  padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 .githubLink {
