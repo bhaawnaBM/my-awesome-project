@@ -93,3 +93,5 @@ function currentCityTemp(response) {
   let maxMinTemp = document.querySelector("#maxmintemp");
   maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;
 }
+
+

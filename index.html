@@ -42,146 +42,147 @@
   <body>
     <div class="container">
       <div class="weather-app">
-        <form id="searchBox">
-          <div class="row">
-            <div class="col-8">
-              <input
-                type="search"
-                placeholder="Search City"
-                class="searchCity"
-                autofocus="on"
-                autocomplete="off"
-              />
-              <button class="search">Search</button>
-            </div>
-            <div class="col-9">
-              <input type="submit" value="Search" class="SearchButton" />
-            </div>
-            <div class="col-12">
-              <button class="currentTemp">Current City</button>
-            </div>
-          </div>
-        </form>
-        <h3>Current Weather</h3>
-        <h1>
-          <ul>
-            <li>
-              <span id="temp">16</span>
-              <span class="unit">
-                <a href="#" id="celsius">°C</a>
-                /
-                <a href="#" id="fahrenheit">°F</a>
-              </span>
-            </li>
-          </ul>
-        </h1>
-        <h2>
-          <ul>
-            <span id="city">
+        <div class="city-weather">
+          <div class="overview">
+            <h1>
+              Tarneit
+              <i class="fa-solid fa-location-dot"></i>
+            </h1>
+            <ul>
               <li>
-                Tarneit
-                <i class="fa-solid fa-location-dot"></i>
+                <p class="todayWeather"></p>
               </li>
-            </span>
-          </ul>
-        </h2>
-        <ul>
-          <li>
-            <p id="maxmintemp">21°/ 8° Feels like 14°</p>
-          </li>
-        </ul>
-        <p class="todayWeather"></p>
-        <div class="weather">
-          <img
-            src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/842/original/mostlyCloudy.png?1668991467"
-            width="150"
-            class="current logo"
-          />
+              <li><p>Cloudy</p></li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/842/original/mostlyCloudy.png?1668991467"
+                  class="current logo"
+                  alt="Cloudy"
+                />
+                <span id="temp"><strong>16</strong></span>
+                <span class="units">
+                  <a href="#" id="celsius">°C</a>
+                  |
+                  <a href="#" id="fahrenheit">°F</a>
+                </span>
+              </div>
+              <ul>
+                <li>
+                  <p id="maxmintemp">21°/ 8° Feels like 14°</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="weather">
+            <div class="col-6">
+              <ul>
+                <li>UV Index: Low</li>
+                <br />
+                <li>Humitidy: 75%</li>
+                <br />
+                <li>Wind : 26km/hr</li>
+                <br />
+              </ul>
+            </div>
+          </div>
+          <form id="searchBox">
+            <div class="row">
+              <div class="col-8">
+                <input
+                  type="search"
+                  placeholder="Search City"
+                  class="searchCity"
+                  autofocus="on"
+                  autocomplete="off"
+                />
+                <button class="search">Search</button>
+              </div>
+              <div class="col-9">
+                <input type="submit" value="Search" class="SearchButton" />
+              </div>
+              <div class="col-12">
+                <button class="currentTemp">Current City</button>
+              </div>
+            </div>
+          </form>
+          <h1></h1>
+          <h2>
+            <ul>
+              <span id="city">
+                <li></li>
+              </span>
+            </ul>
+          </h2>
+
+          <div class="row images">
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/842/original/mostlyCloudy.png?1668991467"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/841/original/cloudy.png?1668991429"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
+                width="50"
+              />
+            </div>
+            <div class="col">
+              <img
+                src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
+                width="50"
+              />
+            </div>
+          </div>
           <br />
-          <ul>
-            <li>
-              <strong>Cloudy</strong>
-              <div class="row">
-                <div class="col-12">UV Index: Low</div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-12">Humitidy: 75%</div>
-              </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-12">Wind: 26km/hr</div>
-              </div>
-            </li>
-          </ul>
-          <br />
-        </div>
-        <div class="row images">
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
-              width="50"
-            />
+          <div class="row days">
+            <div class="col">
+              Today
+              <br />
+              Showers 60%
+            </div>
+            <div class="col">Tomorrow <br />Showers 100%</div>
+            <div class="col">2 Nov <br />Mostly Cloudy</div>
+            <div class="col">3 Nov <br />Cloudy</div>
+            <div class="col">4 Nov <br />Partly cloudy</div>
+            <div class="col">5 Nov <br />Partly cloudy</div>
+            <div class="col">6 Nov <br />Partly cloudy</div>
+            <div class="col">7 Nov <br />Partly cloudy</div>
           </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/842/original/mostlyCloudy.png?1668991467"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/841/original/cloudy.png?1668991429"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
-              width="50"
-            />
-          </div>
-          <div class="col">
-            <img
-              src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/843/original/partlyCloudy.png?1668991505"
-              width="50"
-            />
-          </div>
-        </div>
-        <br />
-        <div class="row days">
-          <div class="col">
-            Today
-            <br />
-            Showers 60%
-          </div>
-          <div class="col">Tomorrow <br />Showers 100%</div>
-          <div class="col">2 Nov <br />Mostly Cloudy</div>
-          <div class="col">3 Nov <br />Cloudy</div>
-          <div class="col">4 Nov <br />Partly cloudy</div>
-          <div class="col">5 Nov <br />Partly cloudy</div>
-          <div class="col">6 Nov <br />Partly cloudy</div>
-          <div class="col">7 Nov <br />Partly cloudy</div>
         </div>
       </div>
     </div>
