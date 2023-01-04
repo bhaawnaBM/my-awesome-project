@@ -72,7 +72,6 @@ let current = document.querySelector(".currentTemp");
 current.addEventListener("click", currentTemp);
 
 function currentCityPosition(position) {
-  console.log(position);
   let lat = position.coords.latitude;
   let longi = position.coords.longitude;
   let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
@@ -86,7 +85,6 @@ function currentCityTemp(response) {
   let feelsLike = Math.round(response.data.main.feels_like);
   let maxTemp = Math.round(response.data.main.temp_max);
   let minTemp = Math.round(response.data.main.temp_min);
-  console.log(temp, feelsLike, maxTemp, minTemp);
   let currentTemp = document.querySelector("#temp");
   currentTemp.innerHTML = `${temp}`;
   let city = document.querySelector("#city");
@@ -99,6 +97,12 @@ function currentCityTemp(response) {
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   let maxMinTemp = document.querySelector("#maxmintemp");
   maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 // let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
