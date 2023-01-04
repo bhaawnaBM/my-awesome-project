@@ -1,26 +1,27 @@
 //Challenge - Display current day and time
 
 function todayDay() {
-  let now = new Date();
+  let date = new Date();
   let weekDays = [
+    "Sunday",
     "Monday",
     "Tuesday",
     "Wednesday",
     "Thursday",
     "Friday",
     "Saturday",
-    "Sunday",
   ];
-  let hours = now.getHours();
+  let today = weekDays[date.getDay()];
+  let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
   }
-  let minutes = now.getMinutes();
+  let minutes = date.getMinutes();
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  let today = weekDays[now.getDay()];
-  let currentDay = document.querySelector(".todayWeather");
+
+  let currentDay = document.querySelector("#date");
   currentDay.innerHTML = `${today} ${hours}:${minutes}`;
 }
 let todaysDay = todayDay();
@@ -90,8 +91,16 @@ function currentCityTemp(response) {
   currentTemp.innerHTML = `${temp}`;
   let city = document.querySelector("#city");
   city.innerHTML = `${response.data.name}`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  let humidityElement = document.querySelector("#humidity");
+  humidityElement.innerHTML = response.data.main.humidity;
+  let windSpeedElement = document.querySelector("#humidity");
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   let maxMinTemp = document.querySelector("#maxmintemp");
   maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;
 }
 
-
+// let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
+// let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=${apiKey}`;
+// axios.get(apiURL).then(currentCityTemp);
