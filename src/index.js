@@ -29,17 +29,21 @@ let todaysDay = todayDay();
 //Challenge 2 - Search for a city and display the city name
 //Challenge 4- when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 
-function search(event) {
-  event.preventDefault();
-  let citySearch = document.querySelector("#searchCity-input");
-  let city = document.querySelector("#city");
-  city.innerHTML = `${citySearch.value}`;
+function search(city) {
   let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch.value}&units=metric&appid=${apiKey}`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
   axios.get(apiURL).then(currentCityTemp);
 }
-let searchCity = document.querySelector("#searchBox");
-searchCity.addEventListener("click", search);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let citySearch = document.querySelector("#cityInput");
+  search(citySearch.value);
+  // let city = document.querySelector("#city");
+  // city.innerHTML = `${citySearch.value}`;
+}
+let searchCity = document.querySelector("#search-form");
+searchCity.addEventListener("submit", handleSubmit);
 
 //Challenge 3 - Convert the Celsius to Farenhit and visa versa
 function unitsF(event) {
@@ -104,7 +108,3 @@ function currentCityTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-
-// let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
-// let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=New York&units=metric&appid=${apiKey}`;
-// axios.get(apiURL).then(currentCityTemp);

@@ -43,6 +43,26 @@
     <div class="container">
       <div class="weather-app">
         <div class="city-weather">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-12">
+                <input
+                  type="search"
+                  placeholder="Search City"
+                  class="form-control"
+                  autofocus="on"
+                  autocomplete="off"
+                  id="cityInput"
+                />
+              </div>
+              <div class="col-9">
+                <input type="submit" value="Search" class="SearchButton" />
+              </div>
+              <div class="col-12">
+                <button class="currentTemp">Current City</button>
+              </div>
+            </div>
+          </form>
           <div class="overview">
             <h1 id="city"></h1>
             <ul>
@@ -85,27 +105,6 @@
               </ul>
             </div>
           </div>
-          <form id="searchBox">
-            <div class="row">
-              <div class="col-8">
-                <input
-                  type="search"
-                  placeholder="Search City"
-                  class="searchCity"
-                  autofocus="on"
-                  autocomplete="off"
-                />
-                <button class="search">Search</button>
-              </div>
-              <div class="col-9">
-                <input type="submit" value="Search" class="SearchButton" />
-              </div>
-              <div class="col-12">
-                <button class="currentTemp">Current City</button>
-              </div>
-            </div>
-          </form>
-
           <div class="row images">
             <div class="col">
               <img

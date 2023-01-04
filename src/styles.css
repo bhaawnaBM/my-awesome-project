@@ -170,3 +170,9 @@ a {
   text-align: left;
   margin-bottom: 15px;
 }
+
+#search-form {
+  position: fixed;
+  top: 5px;
+  right: 700px;
+}
