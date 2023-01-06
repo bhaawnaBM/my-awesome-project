@@ -32,7 +32,7 @@ let todaysDay = todayDay();
 function search(city) {
   let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  axios.get(apiURL).then(currentCityTemp);
+  axios.get(apiURL).then(cityTemp);
 }
 
 function handleSubmit(event) {
@@ -46,25 +46,30 @@ let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", handleSubmit);
 
 //Challenge 3 - Convert the Celsius to Farenhit and visa versa
-function unitsF(event) {
+function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let farenhite = Math.round(16 * 1.8 + 32);
-  let temp = document.querySelector("#temp");
-  temp.innerHTML = `${farenhite}`;
+  let tempElement = document.querySelector("#temp");
+
+  unitCClick.classList.remove("active");
+  unitFClick.classList.add("active");
+  let farenhite = Math.round(celciusTemp * 1.8 + 32);
+  tempElement.innerHTML = Math.round(farenhite);
 }
 
 let unitFClick = document.querySelector("#fahrenheit");
-unitFClick.addEventListener("click", unitsF);
+unitFClick.addEventListener("click", displayFahrenheitTemp);
 
-function unitsC(event) {
+function displayCelciusTempts(event) {
   event.preventDefault();
-  let celcius = 16;
-  let temp = document.querySelector("#temp");
-  temp.innerHTML = `${celcius}`;
+  unitCClick.classList.add("active");
+  unitFClick.classList.remove("active");
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celciusTemp);
 }
+let celcius = null;
 
 let unitCClick = document.querySelector("#celsius");
-unitCClick.addEventListener("click", unitsC);
+unitCClick.addEventListener("click", displayCelciusTempts);
 
 //Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
 function currentTemp(event) {
@@ -80,27 +85,32 @@ function currentCityPosition(position) {
   let longi = position.coords.longitude;
   let apiKey = "8402ccd9e55983fce71eeeaa1d2bd1fc";
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${longi}&limit=5&units=metric&appid=${apiKey}`;
-  axios.get(apiURL).then(currentCityTemp);
+  axios.get(apiURL).then(cityTemp);
 }
 
-function currentCityTemp(response) {
+function cityTemp(response) {
   console.log(response);
-  let temp = Math.round(response.data.main.temp);
+  //let tempElement = Math.round(response.data.main.temp);
+  let currentTemp = document.querySelector("#temp");
+  celciusTemp = response.data.main.temp;
+  currentTemp.innerHTML = Math.round(celciusTemp);
+
   let feelsLike = Math.round(response.data.main.feels_like);
   let maxTemp = Math.round(response.data.main.temp_max);
   let minTemp = Math.round(response.data.main.temp_min);
-  let currentTemp = document.querySelector("#temp");
-  currentTemp.innerHTML = `${temp}`;
+  let maxMinTemp = document.querySelector("#maxmintemp");
+  maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;
+
   let city = document.querySelector("#city");
   city.innerHTML = `${response.data.name}`;
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
   let windSpeedElement = document.querySelector("#windSpeed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
-  let maxMinTemp = document.querySelector("#maxmintemp");
-  maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute(
     "src",
