@@ -97,7 +97,7 @@ function currentCityTemp(response) {
   descriptionElement.innerHTML = response.data.weather[0].description;
   let humidityElement = document.querySelector("#humidity");
   humidityElement.innerHTML = response.data.main.humidity;
-  let windSpeedElement = document.querySelector("#humidity");
+  let windSpeedElement = document.querySelector("#windSpeed");
   windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
   let maxMinTemp = document.querySelector("#maxmintemp");
   maxMinTemp.innerHTML = `${maxTemp}° / ${minTemp}° Feels like ${feelsLike}`;

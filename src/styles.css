@@ -21,9 +21,9 @@ h1 {
   margin: 0 auto;
   font-family: arial, sans-serif;
   font-weight: 500;
-  font-size: 50px;
+  font-size: 40px;
   font-style: italic;
-  margin-bottom: 15px;
+  margin: 15px 0 15px 0;
 }
 h2,
 p {
@@ -51,9 +51,6 @@ button {
   border: 3px white solid;
   border-radius: 20px;
   color: white;
-  position: fixed;
-  top: 35px;
-  right: 480px;
 }
 li {
   list-style: none;
@@ -86,9 +83,9 @@ a {
 
 .weather {
   font-family: "Inconsolata", monospace;
-  position: absolute;
-  top: 200px;
-  right: -1100px;
+  position: relative;
+  top: 100px;
+  left: 500px;
   font-size: 20px;
   line-height: 15px;
 }
@@ -117,22 +114,12 @@ a {
   color: white;
 }
 
-.searchCity {
-  position: relative;
-  top: -200px;
-  left: 40px;
-  padding: 8px;
-}
-
 .SearchButton {
   padding: 5px 15px 5px 15px;
   background-color: black;
   border: 3px white solid;
   border-radius: 20px;
   color: white;
-  position: fixed;
-  top: 35px;
-  right: 600px;
 }
 
 .githubLink {
@@ -167,12 +154,10 @@ a {
   font-size: 25px;
   font-family: "Inconsolata", monospace;
   margin: 0px;
-  text-align: left;
   margin-bottom: 15px;
 }
 
-#search-form {
-  position: fixed;
-  top: 5px;
-  right: 700px;
+.otherDetails {
+  font-size: 25px;
+  font-family: "Inconsolata", monospace;
 }

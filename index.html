@@ -45,7 +45,7 @@
         <div class="city-weather">
           <form id="search-form">
             <div class="row">
-              <div class="col-12">
+              <div class="col-8">
                 <input
                   type="search"
                   placeholder="Search City"
@@ -55,23 +55,23 @@
                   id="cityInput"
                 />
               </div>
-              <div class="col-9">
+              <div class="col-2">
                 <input type="submit" value="Search" class="SearchButton" />
               </div>
-              <div class="col-12">
+              <div class="col-2">
                 <button class="currentTemp">Current City</button>
               </div>
             </div>
           </form>
           <div class="overview">
-            <h1 id="city"></h1>
+            <h1 id="city">Melbourne</h1>
             <ul>
               <li id="date"></li>
               <li id="description"><p></p></li>
             </ul>
           </div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-8">
               <div class="d-flex weather-temperature">
                 <img
                   src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/842/original/mostlyCloudy.png?1668991467"
@@ -92,19 +92,17 @@
                 </li>
               </ul>
             </div>
-          </div>
-          <div class="weather">
-            <div class="col-6">
-              <ul>
-                <li>UV Index: Low</li>
-                <br />
-                <li>Humitidy: <span id="humidity"></span>%</li>
-                <br />
-                <li>Wind : <span id="windSpeed"></span>km/hr</li>
-                <br />
-              </ul>
+            <div class="col-4">
+              <div class="otherDetails">
+                <ul>
+                  <li>UV Index: Low</li>
+                  <li>Humitidy: <span id="humidity"></span>%</li>
+                  <li>Wind : <span id="windSpeed"></span>km/hr</li>
+                </ul>
+              </div>
             </div>
           </div>
+
           <div class="row images">
             <div class="col">
               <img
