@@ -39,8 +39,6 @@ function handleSubmit(event) {
   event.preventDefault();
   let citySearch = document.querySelector("#cityInput");
   search(citySearch.value);
-  // let city = document.querySelector("#city");
-  // city.innerHTML = `${citySearch.value}`;
 }
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", handleSubmit);
@@ -90,7 +88,7 @@ function currentCityPosition(position) {
 
 function cityTemp(response) {
   console.log(response);
-  //let tempElement = Math.round(response.data.main.temp);
+
   let currentTemp = document.querySelector("#temp");
   celciusTemp = response.data.main.temp;
   currentTemp.innerHTML = Math.round(celciusTemp);
