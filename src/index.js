@@ -26,29 +26,51 @@ function todayDay() {
 }
 let todaysDay = todayDay();
 
+// Function to change the timeStamp to Days from the displayForecast function
+
+function formateForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let forecastDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return forecastDays[day];
+}
+
 //Function to display weekly forecast
 
 function displayForecast(response) {
   console.log(response.data.daily);
+  let forecast = response.data.daily;
+
   let forecastElement = document.querySelector("#forecast");
+
   let forecastHTML = `<div class="row images">`;
-  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        ` 
   <div class="col-2">
-      <div class="weather-forecast-date">${day}</div>
+      <div class="weather-forecast-date">${formateForecastDay(
+        forecastDay.time
+      )}</div>
         <img
-          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
+          src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+            forecastDay.condition.icon
+          }.png"
           width="50"
         />
       <div class="weather-forecast-temp">
-          <span class="weather-forecast-max">18°</span>
-          <span class="weather-forecast-min">12°</span>
+          <span class="weather-forecast-max">${Math.round(
+            forecastDay.temperature.maximum
+          )}°</span>
+          <span class="weather-forecast-min">${Math.round(
+            forecastDay.temperature.minimum
+          )}°</span>
       </div>
     </div>
  `;
+    }
   });
   forecastHTML = forecastHTML + ` </div>`;
   forecastElement.innerHTML = forecastHTML;
