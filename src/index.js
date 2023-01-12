@@ -26,6 +26,33 @@ function todayDay() {
 }
 let todaysDay = todayDay();
 
+//Function to display weekly forecast
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row images">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+  <div class="col-2">
+      <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/054/840/original/rainy.png?1668991313"
+          width="50"
+        />
+      <div class="weather-forecast-temp">
+          <span class="weather-forecast-max">18°</span>
+          <span class="weather-forecast-min">12°</span>
+      </div>
+    </div>
+ `;
+  });
+  forecastHTML = forecastHTML + ` </div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 //Challenge 2 - Search for a city and display the city name
 //Challenge 4- when a user searches for a city (example: New York), it should display the name of the city on the result page and the current temperature of the city.
 
@@ -116,3 +143,6 @@ function cityTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
+
+search("Tarneit");
+displayForecast();
