@@ -28,7 +28,8 @@ let todaysDay = todayDay();
 
 //Function to display weekly forecast
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row images">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
@@ -113,6 +114,12 @@ function currentCityPosition(position) {
   axios.get(apiURL).then(cityTemp);
 }
 
+function getDaysForecast(position) {
+  let apiKey = "145a5ct23298882a03o149032528bbfe";
+  let apiURL = `https://api.shecodes.io/weather/v1/forecast?lon=${position.lon}&lat=${position.lat}&key=${apiKey}`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function cityTemp(response) {
   console.log(response);
 
@@ -142,7 +149,8 @@ function cityTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getDaysForecast(response.data.coord);
 }
 
 search("Tarneit");
-displayForecast();
