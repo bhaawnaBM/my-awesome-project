@@ -94,30 +94,30 @@ let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", handleSubmit);
 
 //Challenge 3 - Convert the Celsius to Farenhit and visa versa
-function displayFahrenheitTemp(event) {
-  event.preventDefault();
-  let tempElement = document.querySelector("#temp");
+// function displayFahrenheitTemp(event) {
+//   event.preventDefault();
+//   let tempElement = document.querySelector("#temp");
 
-  unitCClick.classList.remove("active");
-  unitFClick.classList.add("active");
-  let farenhite = Math.round(celciusTemp * 1.8 + 32);
-  tempElement.innerHTML = Math.round(farenhite);
-}
+//   unitCClick.classList.remove("active");
+//   unitFClick.classList.add("active");
+//   let farenhite = Math.round(celciusTemp * 1.8 + 32);
+//   tempElement.innerHTML = Math.round(farenhite);
+// }
 
-let unitFClick = document.querySelector("#fahrenheit");
-unitFClick.addEventListener("click", displayFahrenheitTemp);
+// let unitFClick = document.querySelector("#fahrenheit");
+// unitFClick.addEventListener("click", displayFahrenheitTemp);
 
-function displayCelciusTempts(event) {
-  event.preventDefault();
-  unitCClick.classList.add("active");
-  unitFClick.classList.remove("active");
-  let tempElement = document.querySelector("#temp");
-  tempElement.innerHTML = Math.round(celciusTemp);
-}
-let celcius = null;
+// function displayCelciusTempts(event) {
+//   event.preventDefault();
+//   unitCClick.classList.add("active");
+//   unitFClick.classList.remove("active");
+//   let tempElement = document.querySelector("#temp");
+//   tempElement.innerHTML = Math.round(celciusTemp);
+// }
+// let celcius = null;
 
-let unitCClick = document.querySelector("#celsius");
-unitCClick.addEventListener("click", displayCelciusTempts);
+// let unitCClick = document.querySelector("#celsius");
+// unitCClick.addEventListener("click", displayCelciusTempts);
 
 //Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display and the city and current temperature using the OpenWeather API.
 function currentTemp(event) {
